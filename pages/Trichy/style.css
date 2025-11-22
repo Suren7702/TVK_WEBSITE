@@ -1,0 +1,430 @@
+    /* --- CSS VARIABLES (Theme Colors) --- */
+    :root {
+      --primary-red: #8B0000;       /* Dark Red */
+      --accent-yellow: #FFD700;     /* Gold/Yellow */
+      --bg-gray: #f4f6f9;           /* Light Gray Background */
+      --card-white: #ffffff;
+      --text-dark: #333333;
+      --text-muted: #666666;
+  }
+
+  /* --- GLOBAL STYLES --- */
+  * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  body {
+      background-color: var(--bg-gray);
+      color: var(--text-dark);
+      line-height: 1.6;
+  }
+
+  .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+  }
+
+  h2 {
+      color: var(--primary-red);
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      border-bottom: 3px solid var(--accent-yellow);
+      display: inline-block;
+      padding-bottom: 5px;
+  }
+
+  /* --- HEADER SECTION --- */
+  .district-header {
+      text-align: center;
+      padding: 40px 20px;
+      background: linear-gradient(135deg, var(--primary-red), #500000);
+      color: white;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  }
+
+  .district-header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+  }
+
+  .district-header p {
+      font-size: 1.1rem;
+      color: var(--accent-yellow);
+      font-weight: bold;
+  }
+
+  /* --- STATS CARD --- */
+  .stats-container {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 40px;
+  }
+
+  .stat-card {
+      background: var(--card-white);
+      padding: 30px 50px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      text-align: center;
+      border-top: 5px solid var(--accent-yellow);
+      width: 100%;
+      max-width: 500px;
+  }
+
+  .stat-number {
+      font-size: 3rem;
+      font-weight: bold;
+      color: var(--primary-red);
+  }
+
+  .stat-label {
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+  }
+
+  /* --- LEADERSHIP SECTION --- */
+  .section-wrapper {
+      margin-bottom: 50px;
+  }
+
+  .leaders-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+  }
+
+  .leader-card {
+      background: var(--card-white);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease;
+      border-left: 4px solid transparent;
+  }
+
+  .leader-card:hover {
+      transform: translateY(-5px);
+      border-left: 4px solid var(--primary-red);
+  }
+
+  /* Highlighting the Secretary Card */
+  .leader-card.secretary {
+      border: 2px solid var(--accent-yellow);
+  }
+
+  .leader-img-container {
+    height: auto; /* Was 250px */
+    min-height: 250px; /* Optional: ensures it's not too small */
+    overflow: hidden;
+}
+
+/* 2. Let the image define the height */
+.leader-img-container img {
+    width: 100%;
+    height: auto; /* Was 100% */
+    display: block; /* Removes small gap at bottom */
+}
+
+  .leader-info {
+      padding: 20px;
+  }
+
+  .leader-role {
+      color: var(--primary-red);
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      margin-bottom: 5px;
+  }
+
+  .leader-name {
+      font-size: 1.4rem;
+      margin-bottom: 15px;
+  }
+
+  .contact-details p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 5px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+  }
+
+  .contact-details i {
+      color: var(--primary-red);
+      width: 20px;
+  }
+
+  /* --- RECENT EVENTS (Timeline Style) --- */
+  .events-list {
+      background: var(--card-white);
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  }
+
+  .event-item {
+      display: flex;
+      gap: 20px;
+      padding-bottom: 25px;
+      margin-bottom: 25px;
+      border-bottom: 1px solid #eee;
+  }
+
+  .event-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+      margin-bottom: 0;
+  }
+
+  .event-date-box {
+      background-color: var(--primary-red);
+      color: white;
+      width: 80px;
+      height: 80px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border-radius: 8px;
+      flex-shrink: 0;
+      text-align: center;
+  }
+
+  .event-date-day { font-size: 1.5rem; font-weight: bold; }
+  .event-date-month { font-size: 0.9rem; text-transform: uppercase; }
+
+  .event-content h3 {
+      font-size: 1.2rem;
+      color: var(--text-dark);
+      margin-bottom: 5px;
+  }
+
+  .event-location {
+      font-size: 0.85rem;
+      color: var(--primary-red);
+      margin-bottom: 8px;
+      font-weight: bold;
+  }
+
+  .event-desc {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+  }
+
+  /* --- MEDIA GALLERY --- */
+  .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 15px;
+  }
+
+  .gallery-item {
+      height: 200px;
+      border-radius: 8px;
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+  }
+
+  .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+  }
+
+  .gallery-item:hover img {
+      transform: scale(1.1);
+  }
+
+  /* --- MOBILE RESPONSIVENESS --- */
+  @media (max-width: 768px) {
+      .district-header h1 { font-size: 1.8rem; }
+      .stats-container { flex-direction: column; }
+      .event-item { flex-direction: column; gap: 10px; }
+      .event-date-box { width: 100%; height: 40px; flex-direction: row; gap: 10px; }
+      .event-date-day, .event-date-month { font-size: 1rem; line-height: 1; }
+  }
+  .whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25d366;
+    color: white;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    background-color: #1ebc57;
+}
+.join-form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+  max-width: 600px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.submit-btn {
+  background-color: var(--primary-red);
+  color: var(--accent-yellow);
+  padding: 12px 25px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+  transition: background 0.3s;
+}
+
+.submit-btn:hover {
+  background-color: #500000;
+}
+/* --- NEW LAYOUT STYLES --- */
+
+/* 1. Wrapper to hold Sidebar and Main Content side-by-side */
+.main-wrapper {
+  display: flex;
+  gap: 25px;
+  margin-top: 20px;
+  align-items: flex-start; /* Keeps sidebar at top */
+}
+
+.content-area {
+  flex: 1; /* Takes up remaining space (75%) */
+}
+
+/* 2. Sidebar Styles */
+.sidebar {
+  width: 280px; /* Fixed width for sidebar */
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 20px; /* Stays visible when scrolling */
+  padding: 20px;
+  border-top: 4px solid #8B0000; /* Theme Red */
+}
+
+.sidebar-section {
+  margin-bottom: 30px;
+}
+
+.sidebar h3 {
+  color: #8B0000;
+  font-size: 1.1rem;
+  border-bottom: 2px solid #FFD700; /* Theme Yellow */
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+.sidebar-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar-links li {
+  margin-bottom: 10px;
+}
+
+.sidebar-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  display: block;
+  padding: 8px 10px;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.sidebar-links a:hover {
+  background-color: #f4f6f9;
+  color: #8B0000;
+  padding-left: 15px;
+}
+
+/* 3. Help Box in Sidebar */
+.help-box {
+  background-color: #fff8e1;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  border: 1px dashed #FFD700;
+}
+
+.help-box i {
+  font-size: 2rem;
+  color: #8B0000;
+  margin-bottom: 10px;
+}
+
+/* 4. Flash News Ticker */
+.news-ticker {
+  display: flex;
+  background: #333;
+  color: white;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.news-label {
+  background: #FFD700;
+  color: #8B0000;
+  padding: 10px 20px;
+  font-weight: bold;
+  z-index: 2;
+}
+
+.marquee-content {
+  padding: 10px;
+  white-space: nowrap;
+  animation: scrollText 15s linear infinite;
+  flex: 1;
+}
+
+@keyframes scrollText {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 900px) {
+  .main-wrapper {
+      flex-direction: column;
+  }
+  .sidebar {
+      width: 100%;
+      position: static;
+      margin-bottom: 20px;
+  }
+}
